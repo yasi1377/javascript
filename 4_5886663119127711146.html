@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI Calculator</title>
+        <style>
+            body {
+                max-width: max-content;
+                margin: auto;
+            }
+
+            input {
+                font-size: 20px;
+                direction: rtl;
+                width: 250px;
+            }
+
+            button {
+                font-size: 20px;
+                direction: rtl;
+                display: flex;
+                width: 250px;
+                justify-content:center;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="number" id="height" value="height" name="height" min="1" placeholder="قد خود را وارد کنید">
+        <br>
+        <br>
+        <input type="number" id="weight" value="weight" name="weight" min="1" placeholder="وزن خود را وارد کنید">
+        <br>
+        <br>
+        <label id="result"></label>
+        <br>
+        <br>
+        <button id="cal" onclick="calculate()">محاسبه</button>
+
+        <script>
+            function calculate() {
+                var height = parseInt(document.getElementById("height").value);
+                var weight = parseInt(document.getElementById("weight").value);
+                var bmi = (weight / (height * height) * 10000).toFixed(2);
+                document.getElementById("result").innerHTML = "شاخص توده بدنی برابر است با " + bmi.toString();
+            }
+        </script>
+    </body>
+</html>
